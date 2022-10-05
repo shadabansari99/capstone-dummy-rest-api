@@ -3,7 +3,7 @@ import users.UsersClient;
 import users.create.CreateUserRequestBody;
 import users.create.response.CreateUserResponse;
 
-public class CreateAUser {
+public class CreateAUserTests {
     @Test
     public void shouldCreateAUser()
     {
