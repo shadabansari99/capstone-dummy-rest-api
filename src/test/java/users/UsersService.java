@@ -6,6 +6,7 @@ import users.create.response.CreateUserErrorResponse;
 import users.create.response.CreateUserResponse;
 import users.getAll.GetAllUsersResponse;
 import users.getAllUsersAccount.GetAllUsersAccountResponse;
+import users.getPostByPostId.response.GetPostByIdResponse;
 
 public class UsersService {
 
@@ -36,5 +37,12 @@ public class UsersService {
         GetAllUsersAccountResponse getAllUsersAccountResponse = response.as(GetAllUsersAccountResponse.class);
         getAllUsersAccountResponse.setStatusCode(statusCode);
         return getAllUsersAccountResponse;
+    }
+    public GetPostByIdResponse getPostById(String post_id) {
+        Response response = new UsersClient().getPostById( post_id);
+        int statusCode = response.statusCode();
+        GetPostByIdResponse getPostByIdResponse = response.as(GetPostByIdResponse.class);
+        getPostByIdResponse.setStatusCode(statusCode);
+        return getPostByIdResponse;
     }
 }

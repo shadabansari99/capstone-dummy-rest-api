@@ -8,7 +8,6 @@ import static io.restassured.RestAssured.given;
 
 public class UsersClient {
 
-
     public Response create(CreateUserRequestBody body) {
         Response response = given()
                 .header("app-id", "633d7f032ba989d7422d72b8")
@@ -22,9 +21,6 @@ public class UsersClient {
         response.then().log().body();
         return response;
     }
-
-
-
     public static Response getAllUser() {
         Response response = given()
                 .header("app-id", "633d7f032ba989d7422d72b8")
@@ -35,14 +31,22 @@ public class UsersClient {
                 .body();
         return response;
     }
-
-
-
     public static Response getAll() {
         Response response = given()
                 .header("app-id", "633d7f032ba989d7422d72b8")
                 .when()
                 .get("https://dummyapi.io/data/v1/user?created=1");
+        response.then()
+                .log()
+                .body();
+        return response;
+    }
+    public static Response getPostById(String post_id) {
+        Response response = given()
+                .header("app-id", "633d7f032ba989d7422d72b8")
+                .when()
+                .pathParam("post_id",post_id)
+                .get("https://dummyapi.io/data/v1/post/{post_id}");
         response.then()
                 .log()
                 .body();

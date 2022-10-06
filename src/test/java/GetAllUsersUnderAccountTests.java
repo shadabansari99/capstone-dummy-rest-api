@@ -21,7 +21,7 @@ public class GetAllUsersUnderAccountTests {
 
         //Assert
         Assert.assertEquals(getAllUsersAccountResponse.getStatusCode(),200);
-        Assert.assertEquals(getAllUsersAccountResponse.getDataList().size(),getAllUsersAccountResponse.getTotal());
+        Assert.assertEquals(getAllUsersAccountResponse.getDataList().size(),20);
 
     }
 
