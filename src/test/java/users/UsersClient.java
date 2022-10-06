@@ -52,6 +52,27 @@ public class UsersClient {
                 .body();
         return response;
     }
+    public static Response getAllPosts() {
+        Response response = given()
+                .header("app-id", "633d7f032ba989d7422d72b8")
+                .when()
+                .get("https://dummyapi.io/data/v1/post");
+        response.then()
+                .log()
+                .body();
+        return response;
+    }
 
+    public static Response deletePostById(String delete_postId) {
 
+        Response response = given()
+                .header("app-id", "633d7f032ba989d7422d72b8")
+                .when()
+                .pathParam("delete_postId",delete_postId)
+                .delete("https://dummyapi.io/data/v1/post/{delete_postId}");
+        response.then()
+                .log()
+                .body();
+        return response;
+    }
 }

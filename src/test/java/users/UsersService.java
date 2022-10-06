@@ -1,9 +1,13 @@
 package users;
 
 import io.restassured.response.Response;
+import org.testng.IResultMap;
 import users.create.CreateUserRequestBody;
 import users.create.response.CreateUserErrorResponse;
 import users.create.response.CreateUserResponse;
+import users.deletePostById.DeletePostByIdTests;
+import users.deletePostById.response.DeletePostByIdResponse;
+import users.deletePostById.response.GetAllPostsResponse;
 import users.getAll.GetAllUsersResponse;
 import users.getAllUsersAccount.GetAllUsersAccountResponse;
 import users.getPostByPostId.response.GetPostByIdResponse;
@@ -44,5 +48,22 @@ public class UsersService {
         GetPostByIdResponse getPostByIdResponse = response.as(GetPostByIdResponse.class);
         getPostByIdResponse.setStatusCode(statusCode);
         return getPostByIdResponse;
+    }
+    public GetAllPostsResponse getAllPosts()
+    {
+        Response response = new UsersClient().getAllPosts();
+        int statusCode = response.statusCode();
+        GetAllPostsResponse getAllPostsResponse = response.as(GetAllPostsResponse.class);
+        getAllPostsResponse.setStatusCode(statusCode);
+        return getAllPostsResponse;
+    }
+    public DeletePostByIdResponse deletePostById(String delete_postId)
+    {
+        Response response = new UsersClient().deletePostById(delete_postId);
+              int statusCode =   response.statusCode();
+              DeletePostByIdResponse deletePostByIdResponse = response.as(DeletePostByIdResponse.class);
+              deletePostByIdResponse.setStatusCode(statusCode);
+              return deletePostByIdResponse;
+
     }
 }
