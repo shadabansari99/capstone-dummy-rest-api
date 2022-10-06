@@ -2,22 +2,22 @@ import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import users.UsersClient;
+import users.UsersService;
 import users.getAllUsersAccount.GetAllUsersAccountResponse;
 
 public class GetAllUsersUnderAccountTests {
     //Arrange
-    private UsersClient usersClient;
-
+    private UsersService usersService;
     @BeforeClass
     public void beforeClass()
     {
-        usersClient = new UsersClient();
+        usersService = new UsersService();
     }
     @Test
     public void shouldGetAllUsersUnderAccount()
     {
         //Act
-        GetAllUsersAccountResponse getAllUsersAccountResponse = usersClient.getAllUsersAccount();
+        GetAllUsersAccountResponse getAllUsersAccountResponse = usersService.getAllUsersAccount();
 
         //Assert
         Assert.assertEquals(getAllUsersAccountResponse.getStatusCode(),200);

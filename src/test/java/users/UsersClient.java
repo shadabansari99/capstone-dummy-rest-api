@@ -3,21 +3,12 @@ package users;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import users.create.CreateUserRequestBody;
-import users.create.response.CreateUserErrorResponse;
-import users.create.response.CreateUserResponse;
-import users.getAll.GetAllUsersResponse;
-import users.getAllUsersAccount.GetAllUsersAccountResponse;
 
 import static io.restassured.RestAssured.given;
 
 public class UsersClient {
-    public CreateUserResponse createUser(CreateUserRequestBody body) {
 
-        Response response =   create(body);
-        CreateUserResponse createUserResponse = response.as(CreateUserResponse.class);
-        createUserResponse.setStatusCode(response.statusCode());
-        return createUserResponse;
-    }
+
     public Response create(CreateUserRequestBody body) {
         Response response = given()
                 .header("app-id", "633d7f032ba989d7422d72b8")
@@ -32,7 +23,9 @@ public class UsersClient {
         return response;
     }
 
-    public GetAllUsersResponse getAllUsers() {
+
+
+    public static Response getAllUser() {
         Response response = given()
                 .header("app-id", "633d7f032ba989d7422d72b8")
                 .when()
@@ -40,18 +33,12 @@ public class UsersClient {
         response.then()
                 .log()
                 .body();
-        int statusCode = response.statusCode();
-        GetAllUsersResponse getAllUsersResponse = response.as(GetAllUsersResponse.class);
-       getAllUsersResponse.setStatusCode(statusCode);
-        return getAllUsersResponse;
+        return response;
     }
-    public CreateUserErrorResponse createUserExpectingError (CreateUserRequestBody body){
-        Response response = create(body);
-        CreateUserErrorResponse errorResponse = response.as(CreateUserErrorResponse.class);
-        errorResponse.setStatuscode(response.statusCode());
-        return errorResponse;
-    }
-    public GetAllUsersAccountResponse getAllUsersAccount() {
+
+
+
+    public static Response getAll() {
         Response response = given()
                 .header("app-id", "633d7f032ba989d7422d72b8")
                 .when()
@@ -59,10 +46,7 @@ public class UsersClient {
         response.then()
                 .log()
                 .body();
-        int statusCode = response.statusCode();
-        GetAllUsersAccountResponse getAllUsersAccountResponse = response.as(GetAllUsersAccountResponse.class);
-        getAllUsersAccountResponse.setStatusCode(statusCode);
-        return getAllUsersAccountResponse;
+        return response;
     }
 
 
