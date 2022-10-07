@@ -35,9 +35,9 @@ import java.util.UUID;
                 return this;
             }
 
-            public users.create.CreateUserRequestBody build()
+            public CreateUserRequestBody build()
             {
-                users.create.CreateUserRequestBody createUserRequestBody = new users.create.CreateUserRequestBody(this);
+                CreateUserRequestBody createUserRequestBody = new CreateUserRequestBody(this);
                 return createUserRequestBody;
             }
         }
