@@ -76,4 +76,8 @@ public class UsersService {
               return deletePostByIdResponse;
 
     }
+    public int deletePost(String id) {
+        Response response = UsersClient.deletePostById(id);
+        return response.statusCode();
+    }
 }
