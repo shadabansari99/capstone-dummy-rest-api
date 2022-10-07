@@ -2,9 +2,12 @@ package users;
 
 import io.restassured.response.Response;
 import org.testng.IResultMap;
+import org.testng.internal.IResultListener;
 import users.create.CreateUserRequestBody;
 import users.create.response.CreateUserErrorResponse;
 import users.create.response.CreateUserResponse;
+import users.createAPost.CreateAPostRequestBody;
+import users.createAPost.response.CreateAPostResponse;
 import users.deletePostById.DeletePostByIdTests;
 import users.deletePostById.response.DeletePostByIdResponse;
 import users.deletePostById.response.GetAllPostsResponse;
@@ -20,6 +23,13 @@ public class UsersService {
         CreateUserResponse createUserResponse = response.as(CreateUserResponse.class);
         createUserResponse.setStatusCode(response.statusCode());
         return createUserResponse;
+    }
+    public CreateAPostResponse createPost(CreateAPostRequestBody body)
+    {
+        Response response = new UsersClient().createPost(body);
+        CreateAPostResponse createAPostResponse = response.as(CreateAPostResponse.class);
+        createAPostResponse.setStatusCode(response.statusCode());
+        return createAPostResponse;
     }
     public CreateUserErrorResponse createUserExpectingError (CreateUserRequestBody body){
         Response response =  new UsersClient().create(body);

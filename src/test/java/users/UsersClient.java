@@ -3,6 +3,7 @@ package users;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import users.create.CreateUserRequestBody;
+import users.createAPost.CreateAPostRequestBody;
 
 import static io.restassured.RestAssured.given;
 
@@ -75,4 +76,19 @@ public class UsersClient {
                 .body();
         return response;
     }
+
+    public Response createPost(CreateAPostRequestBody body) {
+        Response response = given()
+                .header("app-id", "633d7f032ba989d7422d72b8")
+                .accept(ContentType.JSON)
+                .contentType(ContentType.JSON)
+                .body(body)
+                .when()
+                .post("https://dummyapi.io/data/v1/post/create");
+
+
+        response.then().log().body();
+        return response;
+    }
+
 }
