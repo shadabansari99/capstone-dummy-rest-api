@@ -17,7 +17,7 @@ public class GetPostByPostIdTests {
 
     @Test
     public void shouldGetPostByPostId(){
-        String post_id = "60d21b4967d0d8992e610c90";
+        String post_id = "60d21b7f67d0d8992e610d2b";
         GetPostByIdResponse getPostByIdResponse = usersService.getPostById(post_id);
         Assert.assertEquals(getPostByIdResponse.getStatusCode(),200);
         Assert.assertEquals(getPostByIdResponse.getId(),post_id);
