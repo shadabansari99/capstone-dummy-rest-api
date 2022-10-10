@@ -5,7 +5,7 @@ import org.testng.annotations.Test;
 import user.UsersService;
 import user.createUser.response.CreateUserResponse;
 
-public class CreateAUserTests {
+public class CreateUserTests {
     private UsersService usersService;
     @BeforeClass
     public void beforeClass()

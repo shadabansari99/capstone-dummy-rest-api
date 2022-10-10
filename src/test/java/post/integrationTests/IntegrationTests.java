@@ -8,7 +8,7 @@ import post.createAPost.CreateAPostRequestBody;
 import post.createAPost.response.CreateAPostResponse;
 
 
-public class Integrationtests {
+public class IntegrationTests {
     private PostsService postsService;
     @BeforeClass
     public void beforeClass()
@@ -20,8 +20,8 @@ public class Integrationtests {
         CreateAPostRequestBody requestBody = new CreateAPostRequestBody.Builder().build();
         CreateAPostResponse createAPostResponse = postsService.createPost(requestBody);
 
-        int statusCodeofCreatePost = createAPostResponse.getStatusCode();
-        Assert.assertEquals(statusCodeofCreatePost,200);
+        int statusCodeOfCreatePost = createAPostResponse.getStatusCode();
+        Assert.assertEquals(statusCodeOfCreatePost,200);
 
         String id = createAPostResponse.getId();
 

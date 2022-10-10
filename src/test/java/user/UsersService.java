@@ -4,7 +4,7 @@ import io.restassured.response.Response;
 import user.createUser.CreateUserRequestBody;
 import user.createUser.response.CreateUserErrorResponse;
 import user.createUser.response.CreateUserResponse;
-import user.getAll.GetAllUsersResponse;
+import user.getAllUsers.response.GetAllUsersResponse;
 import user.getAllUsersAccount.GetAllUsersAccountResponse;
 
 public class UsersService {
@@ -24,7 +24,7 @@ public class UsersService {
         return errorResponse;
     }
     public GetAllUsersResponse getAllUsers() {
-        Response response = new UsersClient().getAllUser();
+        Response response = new UsersClient().getAllUsers();
         int statusCode = response.statusCode();
         GetAllUsersResponse getAllUsersResponse = response.as(GetAllUsersResponse.class);
         getAllUsersResponse.setStatusCode(statusCode);

@@ -17,15 +17,15 @@ public class UsersClient {
                 .when()
                 .post("https://dummyapi.io/data/v1/user/create");
 
-
         response.then().log().body();
         return response;
     }
-    public static Response getAllUser() {
+    public static Response getAllUsers() {
         Response response = given()
                 .header("app-id", "633d7f032ba989d7422d72b8")
                 .when()
-                .get("https://dummyapi.io/data/v1/user?limit=10");
+                .queryParam("limit",10)
+                .get("https://dummyapi.io/data/v1/user");
         response.then()
                 .log()
                 .body();

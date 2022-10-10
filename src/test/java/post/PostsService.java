@@ -33,7 +33,7 @@ public class PostsService {
 
     }
     public int deletePost(String id) {
-        Response response = PostsClient.deletePostById(id);
+        Response response = new PostsClient().deletePostById(id);
         return response.statusCode();
     }
     public CreateAPostResponse createPost(CreateAPostRequestBody body)

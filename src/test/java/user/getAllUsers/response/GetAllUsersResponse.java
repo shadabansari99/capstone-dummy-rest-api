@@ -1,4 +1,4 @@
-package user.getAll;
+package user.getAllUsers.response;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Getter;
@@ -33,13 +33,9 @@ public class GetAllUsersResponse {
     @Getter
     public static class Data{
         private String firstName;
-
         private String lastName;
-
         private String id;
-
         private String title;
-
         private String picture;
     }
 }

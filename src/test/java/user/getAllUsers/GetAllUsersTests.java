@@ -1,13 +1,10 @@
-package user.getAll.response;
+package user.getAllUsers;
 
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import user.UsersService;
-import user.getAll.GetAllUsersResponse;
-
-import static io.restassured.RestAssured.get;
-import static io.restassured.RestAssured.given;
+import user.getAllUsers.response.GetAllUsersResponse;
 
 public class GetAllUsersTests {
 
