@@ -6,7 +6,6 @@ import post.createAPost.response.CreateAPostResponse;
 import post.deletePostById.response.DeletePostByIdResponse;
 import post.deletePostById.response.GetAllPostsResponse;
 import post.getPostByPostId.response.GetPostByIdResponse;
-import user.UsersClient;
 
 public class PostsService {
     public GetPostByIdResponse getPostById(String post_id) {

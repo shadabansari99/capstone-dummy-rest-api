@@ -4,7 +4,6 @@ import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import post.PostsService;
-import user.UsersService;
 import post.getPostByPostId.response.GetPostByIdResponse;
 
 public class GetPostByPostIdTests {

@@ -4,13 +4,8 @@ import io.restassured.response.Response;
 import user.createUser.CreateUserRequestBody;
 import user.createUser.response.CreateUserErrorResponse;
 import user.createUser.response.CreateUserResponse;
-import post.createAPost.CreateAPostRequestBody;
-import post.createAPost.response.CreateAPostResponse;
-import post.deletePostById.response.DeletePostByIdResponse;
-import post.deletePostById.response.GetAllPostsResponse;
 import user.getAll.GetAllUsersResponse;
 import user.getAllUsersAccount.GetAllUsersAccountResponse;
-import post.getPostByPostId.response.GetPostByIdResponse;
 
 public class UsersService {
 

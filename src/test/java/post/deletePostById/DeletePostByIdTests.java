@@ -5,7 +5,6 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import post.PostsService;
 import post.deletePostById.response.DeletePostByIdResponse;
-import user.UsersService;
 import post.deletePostById.response.GetAllPostsResponse;
 
 public class DeletePostByIdTests {

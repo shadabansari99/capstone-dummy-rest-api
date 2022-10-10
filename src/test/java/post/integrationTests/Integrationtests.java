@@ -6,7 +6,7 @@ import org.testng.annotations.Test;
 import post.PostsService;
 import post.createAPost.CreateAPostRequestBody;
 import post.createAPost.response.CreateAPostResponse;
-import user.UsersService;
+
 
 public class Integrationtests {
     private PostsService postsService;

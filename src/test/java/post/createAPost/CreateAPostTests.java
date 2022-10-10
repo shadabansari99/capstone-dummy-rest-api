@@ -4,7 +4,6 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import post.PostsService;
 import post.createAPost.response.CreateAPostResponse;
-import user.UsersService;
 
 public class CreateAPostTests {
     private PostsService postsService;

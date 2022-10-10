@@ -3,7 +3,6 @@ package user;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import user.createUser.CreateUserRequestBody;
-import post.createAPost.CreateAPostRequestBody;
 
 import static io.restassured.RestAssured.given;
 
