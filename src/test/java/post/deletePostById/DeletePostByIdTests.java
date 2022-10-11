@@ -19,9 +19,9 @@ public class DeletePostByIdTests {
     public void shouldDeletePostById(){
 
         GetAllPostsResponse getAllPostsResponse = postsService.getAllPosts();
-
-
+        //Arrange
         String deletePostId= getAllPostsResponse.getData().get(0).getId();
+        //Act
         DeletePostByIdResponse deletePostByIdResponse = postsService.deletePostById(deletePostId);
         //Assert
         Assert.assertEquals(getAllPostsResponse.getStatusCode(),200);

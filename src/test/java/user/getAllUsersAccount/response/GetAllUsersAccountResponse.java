@@ -1,4 +1,4 @@
-package user.getAllUsersAccount;
+package user.getAllUsersAccount.response;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Getter;

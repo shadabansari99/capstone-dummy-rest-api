@@ -17,14 +17,16 @@ public class IntegrationTests {
     }
     @Test
     public void shouldCreateAndDeletePost() {
+        //Arrange
         CreateAPostRequestBody requestBody = new CreateAPostRequestBody.Builder().build();
+        //Act
         CreateAPostResponse createAPostResponse = postsService.createPost(requestBody);
-
         int statusCodeOfCreatePost = createAPostResponse.getStatusCode();
+        //Assert
         Assert.assertEquals(statusCodeOfCreatePost,200);
-
+        //Arrange
         String id = createAPostResponse.getId();
-
+        //Act
         int statusCodeOfDeletePost = postsService.deletePost(id);
         //Assert
         Assert.assertEquals(statusCodeOfDeletePost, 200);

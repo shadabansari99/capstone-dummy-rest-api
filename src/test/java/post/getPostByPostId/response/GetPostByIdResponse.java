@@ -16,7 +16,6 @@ public class GetPostByIdResponse {
     private String likes;
     private String[] tags;
 
-    //add pojo
 
     @Getter
     public class Owner {

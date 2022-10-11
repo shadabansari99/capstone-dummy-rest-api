@@ -1,10 +1,10 @@
-package user.getAllUsersAccount.response;
+package user.getAllUsersAccount;
 
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import user.UsersService;
-import user.getAllUsersAccount.GetAllUsersAccountResponse;
+import user.getAllUsersAccount.response.GetAllUsersAccountResponse;
 
 public class GetAllUsersUnderAccountTests {
     //Arrange

@@ -18,7 +18,6 @@ public class CreateAPostTests {
         CreateAPostRequestBody requestBody =  new CreateAPostRequestBody.Builder().build();
         //Act
         CreateAPostResponse createAPostResponse = postsService.createPost(requestBody);
-
         //Assert
         createAPostResponse.assertPostCreate(requestBody);
     }

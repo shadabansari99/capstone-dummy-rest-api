@@ -5,7 +5,7 @@ import user.createUser.CreateUserRequestBody;
 import user.createUser.response.CreateUserErrorResponse;
 import user.createUser.response.CreateUserResponse;
 import user.getAllUsers.response.GetAllUsersResponse;
-import user.getAllUsersAccount.GetAllUsersAccountResponse;
+import user.getAllUsersAccount.response.GetAllUsersAccountResponse;
 
 public class UsersService {
 

@@ -39,9 +39,10 @@ public class CreateAPostResponse {
         private String id;
     }
 
-    public void assertPostCreate(CreateAPostRequestBody createAPostRequestBody)
+    public void assertPostCreate(CreateAPostRequestBody requestBody)
     {
         assertEquals(this.getStatusCode(),200);
+        assertEquals(this.getOwner().getId(),requestBody.getOwner());
     }
 
 
