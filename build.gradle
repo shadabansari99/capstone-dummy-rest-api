@@ -18,9 +18,12 @@ dependencies {
 
 }
 task runApiTests(type: Test) {
-    useTestNG(){
-        testLogging.showStandardStreams = true
+    useTestNG() {
         useDefaultListeners true
-
-}
+        testLogging {
+            exceptionFormat "full"
+            events "started", "skipped", "passed", "failed"
+            showStandardStreams true
+        }
+    }
 }
